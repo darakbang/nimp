@@ -1,0 +1,7 @@
+pattern
+
+1. command
+2. flyweight
+3. prototype
+4. observer
+5. singleton

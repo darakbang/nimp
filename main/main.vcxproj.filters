@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="pattern\singleton.h">
+      <Filter>pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern\singleton.hpp">
+      <Filter>pattern</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="pattern">
+      <UniqueIdentifier>{1cabf7d3-dd27-402a-8520-b085e0dc26f3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="헤더.txt">
+      <Filter>pattern</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
