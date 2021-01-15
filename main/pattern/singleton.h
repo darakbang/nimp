@@ -14,3 +14,7 @@ protected:
 };
 
 #include "singleton.hpp";
+
+
+// call_once
+// intantaiated flag
