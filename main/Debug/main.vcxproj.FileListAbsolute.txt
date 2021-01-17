@@ -1,0 +1,2 @@
+C:\Users\comda\Desktop\nimp\main\Debug\main.exe
+C:\Users\comda\Desktop\nimp\main\Debug\main.pdb

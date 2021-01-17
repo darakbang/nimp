@@ -5,16 +5,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="pattern\singleton.h">
-      <Filter>pattern</Filter>
-    </ClInclude>
     <ClInclude Include="pattern\singleton.hpp">
-      <Filter>pattern</Filter>
+      <Filter>pattern\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern\singleton\singleton_call_once.h">
+      <Filter>pattern\singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern\singleton\singleton.h">
+      <Filter>pattern\singleton</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="pattern">
       <UniqueIdentifier>{1cabf7d3-dd27-402a-8520-b085e0dc26f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pattern\singleton">
+      <UniqueIdentifier>{a0bf9d77-b2bf-4efe-8ef6-99a5bb85bd71}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

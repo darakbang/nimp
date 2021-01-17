@@ -4,7 +4,8 @@
 #include "stdafx.h"
 #include <iostream>
 #include <string>
-#include "./pattern/singleton.h";
+#include "./pattern/singleton/singleton.h";
+#include "./pattern/singleton/singleton_call_once.h";
 
 class A : public singleton<A>{
 	friend class singleton<A>;	
@@ -16,14 +17,29 @@ private:
 	A(){}
 };
 
+class B : public singleton_call_once<B> {
+	friend class singleton_call_once<B>;
+public:
+	int a;
+	std::wstring b;
+
+private:
+	B(){}
+};
+
 int main()
 {
 	std::cout << "start test.." << std::endl;
 	A::instance().a = 10;
 	A::instance().b = L"singleton test...";
 
-	std::cout << "A value: " << A::instance().a << std::endl;
-	std::wcout << "B value: " << A::instance().b.c_str() << std::endl;
+	B::instance().a = 11;
+	B::instance().b = L"singleton call once test";
+
+	std::cout << "A::A value: " << A::instance().a << std::endl;
+	std::wcout << "A::B value: " << A::instance().b.c_str() << std::endl;
+	std::cout << "B::A value: " << B::instance().a << std::endl;
+	std::wcout << "B::B value: " << B::instance().b.c_str() << std::endl;
     std::cout << "Hello World!\n" << std::endl;
 }
 

@@ -153,8 +153,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pattern\singleton.h" />
     <ClInclude Include="pattern\singleton.hpp" />
+    <ClInclude Include="pattern\singleton\singleton.h" />
+    <ClInclude Include="pattern\singleton\singleton_call_once.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
