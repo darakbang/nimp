@@ -13,7 +13,7 @@ protected:
 	singleton() {}
 };
 
-#include "singleton.hpp";
+#include "singleton.hpp"
 
 
 // call_once

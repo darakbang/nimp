@@ -2,10 +2,9 @@
 //
 
 #include "stdafx.h"
-#include <iostream>
-#include <string>
-#include "./pattern/singleton/singleton.h";
-#include "./pattern/singleton/singleton_call_once.h";
+#include "./pattern/singleton/singleton.h"
+#include "./pattern/singleton/singleton_call_once.h"
+
 
 class A : public singleton<A>{
 	friend class singleton<A>;	
@@ -27,6 +26,10 @@ private:
 	B(){}
 };
 
+const int fps = 60;
+using frame = std::chrono::duration<int32_t, std::ratio<1, fps>>;
+using ms = std::chrono::duration<float, std::milli>;
+
 int main()
 {
 	std::cout << "start test.." << std::endl;
@@ -41,6 +44,27 @@ int main()
 	std::cout << "B::A value: " << B::instance().a << std::endl;
 	std::wcout << "B::B value: " << B::instance().b.c_str() << std::endl;
     std::cout << "Hello World!\n" << std::endl;
+
+	/*using miliseconnds = std::chrono::milliseconds;
+	using std::chrono::duration_cast;*/
+	
+
+	/// <summary>
+	/// chrono를 이용한 game loop fixed framerate(60fps)
+	/// 박제
+	/// </summary>
+	/// <returns></returns>
+	std::chrono::time_point<std::chrono::high_resolution_clock> fpsTimer(std::chrono::high_resolution_clock::now());
+	frame FPS{};
+	
+	while (true) {
+		FPS = std::chrono::duration_cast<frame>(std::chrono::high_resolution_clock::now() - fpsTimer);
+
+		if (FPS.count() >= 1) {
+			fpsTimer = std::chrono::high_resolution_clock::now();
+			std::cout << "LastFrame: " << std::chrono::duration_cast<ms>(FPS).count() << "ms | FPS: " << FPS.count() * fps << std::endl;
+		}
+	}
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
